@@ -1,0 +1,15 @@
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log opened at 2012-11-29 18:20:17
+project --topLevelPackage com.lintips.inventario
+jpa setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT 
+entity jpa --class ~.domain.Producto --testAutomatically
+json all
+field number --fieldName idProducto --type int --notNull
+field string --fieldName nombre --notNull
+field string --fieldName descripcion
+field number --fieldName precio --type double
+web mvc json setup
+web mvc json all --package ~.web
+web mvc json add --jsonObject ~.domain.Producto --class ~.web.ProductoController
+perform tests
+quit
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log closed at 2012-11-29 18:21:41
